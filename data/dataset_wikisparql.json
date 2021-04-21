@@ -1,0 +1,2745 @@
+{
+    "questions": [
+        {
+            "question_id": 0,
+            "natural_language_question": "Who is the president of Poland?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q1054799 wdt:P1308 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "president of Poland",
+                            "entity": "wd:Q1054799"
+                        }
+                    ],
+                    "sparql_template": "select ?obj where { <sbj_1> wdt:P1308 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "president of Poland",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                },
+                {
+                    "query_id": 1,
+                    "sparql_query": "SELECT ?obj WHERE { ?sbj wdt:P279 wd:Q30461 . ?sbj wdt:P17 wd:Q414 . ?sbj wdt:P1308 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "president",
+                            "entity": "wd:Q30461"
+                        },
+                        {
+                            "label": "Poland",
+                            "entity": "wd:Q414"
+                        }
+                    ],
+                    "sparql_template": "select ?obj where { ?sbj wdt:P279 <obj_1> . ?sbj wdt:P17 <obj_2> . ?sbj wdt:P1308 ?obj . }"
+                }
+            ]
+        },
+        {
+            "question_id": 1,
+            "natural_language_question": "How many Turing awards have people from Austria won?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ( COUNT ( ?sbj ) AS ?value ) WHERE { ?sbj wdt:P166 wd:Q185667 . ?sbj wdt:P27 wd:Q40 . }",
+                    "entities": [
+                        {
+                            "label": "Turing awards",
+                            "entity": "wd:Q185667"
+                        },
+                        {
+                            "label": "Austria",
+                            "entity": "wd:Q40"
+                        }
+                    ],
+                    "sparql_template": "select ( count ( ?sbj ) as ?value ) where { ?sbj wdt:P166 <obj_1> . ?sbj wdt:P27 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "Turing awards",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Austria",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 2,
+            "natural_language_question": "Give me all countries that have won a FIFA World Cup",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?obj WHERE { ?sbj wdt:P3450 wd:Q19317 . ?sbj wdt:P1346 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "FIFA World Cup",
+                            "entity": "wd:Q19317"
+                        }
+                    ],
+                    "sparql_template": "select distinct ?obj where { ?sbj wdt:P3450 <obj_1> . ?sbj wdt:P1346 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "FIFA World Cup",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 3,
+            "natural_language_question": "What is the population of Chile?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?value WHERE { wd:Q298 p:P1082 ?obj .  ?obj ps:P1082 ?value .  ?obj pq:P585 ?time . } ORDER BY DESC ( ?time ) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "Chile",
+                            "entity": "wd:Q298"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?value WHERE { <sbj_1> p:P1082 ?obj .  ?obj ps:P1082 ?value .  ?obj pq:P585 ?time . } ORDER BY DESC ( ?time ) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "Chile",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 4,
+            "natural_language_question": "Who is the author of One Piece?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q673 wdt:P50 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "One Piece",
+                            "entity": "wd:Q673"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P50 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "One Piece",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 5,
+            "natural_language_question": "Which musicians are from Sweden?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P106 wd:Q639669 . ?sbj wdt:P27 wd:Q34 . }",
+                    "entities": [
+                        {
+                            "label": "musicians",
+                            "entity": "wd:Q639669"
+                        },
+                        {
+                            "label": "Sweden",
+                            "entity": "wd:Q34"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P106 <obj_1> . ?sbj wdt:P27 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "musicians",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Sweden",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 6,
+            "natural_language_question": "How many movies has Tarantino directed?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ( COUNT ( ?sbj ) AS ?value ) WHERE { ?sbj wdt:P57 wd:Q3772 . }",
+                    "entities": [
+                        {
+                            "label": "Tarantino",
+                            "entity": "wd:Q3772"
+                        }
+                    ],
+                    "sparql_template": "SELECT ( COUNT ( ?sbj ) AS ?value ) WHERE { ?sbj wdt:P57 <obj_1> . }",
+                    "slots": [
+                        {
+                            "label": "Tarantino",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 7,
+            "natural_language_question": "Is New York bigger than Beijing?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "ASK WHERE { wd:Q60 wdt:P2046 ?value1 . wd:Q956 wdt:P2046 ?value2 . FILTER ( ?value1 > ?value2 ) }",
+                    "entities": [
+                        {
+                            "label": "New York",
+                            "entity": "wd:Q60"
+                        },
+                        {
+                            "label": "Beijing",
+                            "entity": "wd:Q956"
+                        }
+                    ],
+                    "sparql_template": "ASK WHERE { <sbj_1> wdt:P2046 ?value1 . <sbj_2> wdt:P2046 ?value2 . FILTER ( ?value1 > ?value2 ) }",
+                    "slots": [
+                        {
+                            "label": "New York",
+                            "slot": "<sbj_1>"
+                        },
+                        {
+                            "label": "Beijing",
+                            "slot": "<sbj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 8,
+            "natural_language_question": "what countries are part of the European Union?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q458 wdt:P527 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "European Union",
+                            "entity": "wd:Q458"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P527 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "European Union",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 9,
+            "natural_language_question": "What computer scientists were born after 1970?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P106 wd:Q82594 . ?sbj wdt:P569 ?value . FILTER ( YEAR ( ?value ) > 1970 ) }",
+                    "entities": [
+                        {
+                            "label": "computer scientists",
+                            "entity": "wd:Q82594"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P106 <obj_1> . ?sbj wdt:P569 ?value . FILTER ( YEAR ( ?value ) > <num> ) }",
+                    "slots": [
+                        {
+                            "label": "computer scientists",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 10,
+            "natural_language_question": "Is Leonardo Dicaprio older than Joaquin Phoenix?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "ASK WHERE { wd:Q38111 wdt:P569 ?value1 . wd:Q185140 wdt:P569 ?value2 . FILTER ( ?value1 < ?value2 ) }",
+                    "entities": [
+                        {
+                            "label": "Leonardo Dicaprio",
+                            "entity": "wd:Q38111"
+                        },
+                        {
+                            "label": "Joaquin Phoenix",
+                            "entity": "wd:Q185140"
+                        }
+                    ],
+                    "sparql_template": "ASK WHERE { <sbj_1> wdt:P569 ?value1 . <sbj_2> wdt:P569 ?value2 . FILTER ( ?value1 < ?value2 ) }",
+                    "slots": [
+                        {
+                            "label": "Leonardo Dicaprio",
+                            "slot": "<sbj_1>"
+                        },
+                        {
+                            "label": "Joaquin Phoenix",
+                            "slot": "<sbj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 11,
+            "natural_language_question": "In which country is the Museo del Prado located?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q160112 wdt:P17 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "Museo del Prado",
+                            "entity": "wd:Q160112"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P17 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "Museo del Prado",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 12,
+            "natural_language_question": "When did Caesars Palace open?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q569978 wdt:P571 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "Caesars Palace",
+                            "entity": "wd:Q569978"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P571 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "Caesars Palace",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 13,
+            "natural_language_question": "Which political party was Abraham Lincoln a member of?",
+            "comment": "The question assumes one answer, but there are several",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q91 wdt:P102 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Abraham Lincoln",
+                            "entity": "wd:Q91"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P102 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Abraham Lincoln",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 14,
+            "natural_language_question": "Which paintings feature a banana?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P180 wd:Q503 . ?sbj wdt:P31/wdt:P279* wd:Q3305213 }",
+                    "entities": [
+                        {
+                            "label": "banana",
+                            "entity": "wd:Q503"
+                        },
+                        {
+                            "label": "paintings",
+                            "entity": "wd:Q3305213"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P180 <obj_1> . ?sbj wdt:P31/wdt:P279* <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "banana",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "paintings",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 15,
+            "natural_language_question": "Do any national flags use pink?",
+            "comment": "The answer is arguably not correct; some flags use a little pink",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "ASK WHERE { ?obj wdt:P31 wd:Q186516 . ?obj wdt:P462 wd:Q429220 }",
+                    "entities": [
+                        {
+                            "label": "national flags",
+                            "entity": "wd:Q186516"
+                        },
+                        {
+                            "label": "pink",
+                            "entity": "wd:Q429220"
+                        }
+                    ],
+                    "sparql_template": "ASK WHERE { ?obj wdt:P31 <obj_1> . ?obj wdt:P462 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "national flags",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "pink",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 16,
+            "natural_language_question": "When did Ian Curtis commit suicide?",
+            "comment": "The query assumes the premise of the question, that he committed suicide, and checks when he died",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q207867 wdt:P570 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Ian Curtis",
+                            "entity": "wd:Q207867"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P570 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Ian Curtis",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 17,
+            "natural_language_question": "Where can I see paintings by El Greco?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { ?sbj wdt:P170 wd:Q301 . ?sbj wdt:P195 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "El Greco",
+                            "entity": "wd:Q301"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?sbj wdt:P170 <obj_1> . ?sbj wdt:P195 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "El Greco",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 18,
+            "natural_language_question": "In which movies did Al Pacino and Robert de Niro appear together?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P161 wd:Q41163 . ?sbj wdt:P161 wd:Q36949 . }",
+                    "entities": [
+                        {
+                            "label": "Al Pacino",
+                            "entity": "wd:Q41163"
+                        },
+                        {
+                            "label": "Robert de Niro",
+                            "entity": "wd:Q36949"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P161 <obj_1> . ?sbj wdt:P161 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "Al Pacino",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Robert de Niro",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 19,
+            "natural_language_question": "Who is the youngest head of state in the world?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj1 WHERE { ?sbj wdt:P35 ?obj1 . ?obj1 wdt:P569 ?obj2 . FILTER(!isBlank(?obj2)) } ORDER BY DESC(?obj2) LIMIT 1",
+                    "entities": [],
+                    "sparql_template": "SELECT ?obj1 WHERE { ?sbj wdt:P35 ?obj1 . ?obj1 wdt:P569 ?obj2 . FILTER(!isBlank(?obj2)) } ORDER BY DESC(?obj2) LIMIT 1",
+                    "slots": []
+                }
+            ]
+        },
+        {
+            "question_id": 20,
+            "natural_language_question": "Which mountains are on Mars?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q8502 . ?sbj wdt:P376 wd:Q111 . }",
+                    "entities": [
+                        {
+                            "label": "Mars",
+                            "entity": "wd:Q111"
+                        },
+                        {
+                            "label": "mountain",
+                            "entity": "wd:Q8502"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P376 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "Mars",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "mountain",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 21,
+            "natural_language_question": "What alcoholic drinks are made with orange?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P186 wd:Q13191 . ?sbj wdt:P31*/wdt:P279* wd:Q154 }",
+                    "entities": [
+                        {
+                            "label": "alcoholic drinks",
+                            "entity": "wd:Q154"
+                        },
+                        {
+                            "label": "orange",
+                            "entity": "wd:Q13191"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P186 <obj_1> . ?sbj wdt:P31*/wdt:P279* <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "alcoholic drinks",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "orange",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 22,
+            "natural_language_question": "Which video games have a fox character?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q7889 . ?sbj wdt:P674 ?obj . ?obj wdt:P31/wdt:P279* wd:Q19594662 . }",
+                    "entities": [
+                        {
+                            "label": "fox",
+                            "entity": "wd:Q19594662"
+                        },
+                        {
+                            "label": "video games",
+                            "entity": "wd:Q7889"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj ?obj WHERE { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P674 ?obj . ?obj wdt:P31/wdt:P279* <obj_3> . }",
+                    "slots": [
+                        {
+                            "label": "fox",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "video games",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 23,
+            "natural_language_question": "How many astronauts studied at MIT?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT (COUNT(?sbj) AS ?count) WHERE { ?sbj wdt:P69 wd:Q49108 . ?sbj wdt:P106 wd:Q11631 }",
+                    "entities": [
+                        {
+                            "label": "astronauts",
+                            "entity": "wd:Q11631"
+                        },
+                        {
+                            "label": "MIT",
+                            "entity": "wd:Q49108"
+                        }
+                    ],
+                    "sparql_template": "SELECT (COUNT(?sbj) AS ?count) WHERE { ?sbj wdt:P69 <obj_1> . ?sbj wdt:P106 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "astronauts",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "MIT",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 24,
+            "natural_language_question": "When was the first exoplanet discovered?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q44559 . ?sbj wdt:P575 ?obj } ORDER BY ?obj LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "exoplanet",
+                            "entity": "wd:Q44559"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P575 ?obj } ORDER BY ?obj LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "exoplanet",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 25,
+            "natural_language_question": "Which movies were directed by siblings?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P57 ?obj1 . ?sbj wdt:P57 ?obj2 . ?obj1 wdt:P3373 ?obj2 . ?sbj wdt:P31/wdt:P279* wd:Q11424 . }",
+                    "entities": [
+                        {
+                            "label": "movies",
+                            "entity": "wd:Q11424"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P57 ?obj1 . ?sbj wdt:P57 ?obj2 . ?obj1 wdt:P3373 ?obj2 . ?sbj wdt:P31/wdt:P279* <obj_4> . }",
+                    "slots": [
+                        {
+                            "label": "movies",
+                            "slot": "<obj_4>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 26,
+            "natural_language_question": "What buildings are named after JFK?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj WHERE { ?sbj wdt:P138 wd:Q9696 . ?sbj wdt:P31/wdt:P279* wd:Q41176 . }",
+                    "entities": [
+                        {
+                            "label": "JFK",
+                            "entity": "wd:Q9696"
+                        },
+                        {
+                            "label": "buildings",
+                            "entity": "wd:Q41176"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj WHERE { ?sbj wdt:P138 <obj_1> . ?sbj wdt:P31/wdt:P279* <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "JFK",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "buildings",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 27,
+            "natural_language_question": "When was Hey Jude released?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q607742 wdt:P577 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Hey Jude",
+                            "entity": "wd:Q607742"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P577 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Hey Jude",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 28,
+            "natural_language_question": "Which countries have multiple capitals?",
+            "comment": "The query allows historical countries",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj (COUNT(DISTINCT ?obj) as ?count) WHERE { ?sbj wdt:P36 ?obj . ?sbj wdt:P31/wdt:P279 wd:Q6256 . } GROUP BY ?sbj HAVING(?count >= 2)",
+                    "entities": [],
+                    "sparql_template": "SELECT ?sbj (COUNT(DISTINCT ?obj) as ?count) WHERE { ?sbj wdt:P36 ?obj . ?sbj wdt:P31/wdt:P279 <obj_2> . } GROUP BY ?sbj HAVING(?count >= <num>)",
+                    "slots": []
+                }
+            ]
+        },
+        {
+            "question_id": 29,
+            "natural_language_question": "Which video games are known to be NP complete?",
+            "comment": "There is also a type wd:Q21055677 for NP complete games, but their results are included here by way of P279",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?sbj { ?sbj wdt:P31/wdt:P279* wd:Q7889 . ?sbj wdt:P31/wdt:P279* wd:Q215206 . }",
+                    "entities": [
+                        {
+                            "label": "video games",
+                            "entity": "wd:Q7889"
+                        },
+                        {
+                            "label": "NP complete",
+                            "entity": "wd:Q215206"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P31/wdt:P279* <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "video games",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "NP complete",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 30,
+            "natural_language_question": "What is the most common cause of death among F1 drivers?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj (COUNT(DISTINCT ?sbj) AS ?count) { ?sbj wdt:P106 wd:Q10841764 . ?sbj wdt:P509 ?obj } GROUP BY ?obj ORDER BY DESC(?count) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "F1 drivers",
+                            "entity": "wd:Q10841764"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj (COUNT(DISTINCT ?sbj) AS ?count) { ?sbj wdt:P106 <obj_1> . ?sbj wdt:P509 ?obj } GROUP BY ?obj ORDER BY DESC(?count) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "F1 drivers",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 31,
+            "natural_language_question": "Which asthma drugs are carcinogenic?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { ?sbj wdt:P31/wdt:P279* wd:Q187661 . ?sbj wdt:P2175 wd:Q35869 . }",
+                    "entities": [
+                        {
+                            "label": "asthma",
+                            "entity": "wd:Q35869"
+                        },
+                        {
+                            "label": "carcinogenic",
+                            "entity": "wd:Q187661"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P2175 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "asthma",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "carcinogenic",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 32,
+            "natural_language_question": "Which countries are named after plants?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "timeout limit reached",
+                    "sparql_query": "SELECT ?sbj ?obj WHERE { ?sbj wdt:P31/wdt:P279* wd:Q6256 . ?sbj wdt:P138 ?obj . ?obj wdt:P171* wd:Q756 . }",
+                    "entities": [
+                        {
+                            "label": "countries",
+                            "entity": "wd:Q6256"
+                        },
+                        {
+                            "label": "plants",
+                            "entity": "wd:Q756"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?sbj ?obj WHERE { ?sbj wdt:P31/wdt:P279* <obj_1> . ?sbj wdt:P138 ?obj . ?obj wdt:P171* <obj_3> . }",
+                    "slots": [
+                        {
+                            "label": "countries",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "plants",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 33,
+            "natural_language_question": "Which telescopes are based in Chile?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q4213 . ?subj wdt:P17 wd:Q298 . }",
+                    "entities": [
+                        {
+                            "label": "Chile",
+                            "entity": "wd:Q298"
+                        },
+                        {
+                            "label": "telescopes",
+                            "entity": "wd:Q4213"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P17 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "Chile",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "telescopes",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 34,
+            "natural_language_question": "What is the chemical symbol for Potassium?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q703 wdt:P246 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Potassium",
+                            "entity": "wd:Q703"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P246 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Potassium",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 35,
+            "natural_language_question": "What is the Twitter account of Elon Musk?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { wd:Q317521 wdt:P2002 ?obj } LIMIT 100",
+                    "entities": [
+                        {
+                            "label": "Elon Musk",
+                            "entity": "wd:Q317521"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { <sbj_1> wdt:P2002 ?obj } LIMIT 100",
+                    "slots": [
+                        {
+                            "label": "Elon Musk",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 36,
+            "natural_language_question": "Who is the CEO of eBay?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q58024 wdt:P169 ?obj . } LIMIT 100",
+                    "entities": [
+                        {
+                            "label": "eBay",
+                            "entity": "wd:Q58024"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P169 ?obj . } LIMIT 100",
+                    "slots": [
+                        {
+                            "label": "eBay",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 37,
+            "natural_language_question": "Which alkali metal is in period 4",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279 wd:Q19557 . ?subj wdt:P361 wd:Q239825 }",
+                    "entities": [
+                        {
+                            "label": "alkali metal",
+                            "entity": "wd:Q19557"
+                        },
+                        {
+                            "label": "period 4",
+                            "entity": "wd:Q239825"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279 <obj_1> . ?subj wdt:P361 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "alkali metal",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "period 4",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 38,
+            "natural_language_question": "Where can I find platypuses?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q15343 wdt:P183 ?obj }",
+                    "entities": [
+                        {
+                            "label": "platypuses",
+                            "entity": "wd:Q15343"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P183 ?obj }",
+                    "slots": [
+                        {
+                            "label": "platypuses",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 39,
+            "natural_language_question": "Which endangered species can be found in Chile?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P141 wd:Q11394 . ?subj wdt:P183 wd:Q298 }",
+                    "entities": [
+                        {
+                            "label": "endangered species",
+                            "entity": "wd:Q11394"
+                        },
+                        {
+                            "label": "Chile",
+                            "entity": "wd:Q298"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P141 <obj_1> . ?subj wdt:P183 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "endangered species",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Chile",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 40,
+            "natural_language_question": "Which country has the most nuclear power plants?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Considers current and past nuclear power plants",
+                    "sparql_query": "SELECT ?obj WHERE { ?subj wdt:P31/wdt:P279* wd:Q134447 . ?subj wdt:P17 ?obj } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "nuclear power plants",
+                            "entity": "wd:Q134447"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P17 ?obj } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "nuclear power plants",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 41,
+            "natural_language_question": "Which country has the most official languages?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Explicitly checks instances of sovereign state.",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3624078 . ?subj wdt:P37 ?obj } GROUP BY ?subj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "country",
+                            "entity": "wd:Q3624078"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P37 ?obj } GROUP BY ?subj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "country",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 42,
+            "natural_language_question": "When did ICLR start?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q30108190 wdt:P571 ?obj }",
+                    "entities": [
+                        {
+                            "label": "ICLR",
+                            "entity": "wd:Q30108190"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P571 ?obj }",
+                    "slots": [
+                        {
+                            "label": "ICLR",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 43,
+            "natural_language_question": "Which country that does not border Germany has German as an official language?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Explicitly checks instances of sovereign state. Includes Germany itself.",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3624078 . ?subj wdt:P37 wd:Q188 . FILTER NOT EXISTS { wd:Q183 wdt:P47 ?subj } }",
+                    "entities": [
+                        {
+                            "label": "Germany",
+                            "entity": "wd:Q188"
+                        },
+                        {
+                            "label": "German",
+                            "entity": "wd:Q3624078"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P37 <obj_2> . FILTER NOT EXISTS { <sbj_3> wdt:P47 ?subj } }",
+                    "slots": [
+                        {
+                            "label": "Germany",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "German",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 44,
+            "natural_language_question": "What is the national anthem of Greece?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Does not ask for name as presumably system will present names in all cases.",
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q41 wdt:P85 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Greece",
+                            "entity": "wd:Q41"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P85 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Greece",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 45,
+            "natural_language_question": "Which pair of directors have co-directed the most movies together?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Explicitly checks instances of movie.",
+                    "sparql_query": "SELECT ?obj1 ?obj2 (COUNT(DISTINCT ?subj) AS ?count) WHERE { ?subj wdt:P31/wdt:P279 wd:Q11424 . ?subj wdt:P57 ?obj1 . ?subj wdt:P57 ?obj2 . FILTER(?obj1 != ?obj2) } GROUP BY ?obj1 ?obj2 ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "movies",
+                            "entity": "wd:Q11424"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj1 ?obj2 (COUNT(DISTINCT ?subj) AS ?count) WHERE { ?subj wdt:P31/wdt:P279 <obj_1> . ?subj wdt:P57 ?obj1 . ?subj wdt:P57 ?obj2 . FILTER(?obj1 != ?obj2) } GROUP BY ?obj1 ?obj2 ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "movies",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 46,
+            "natural_language_question": "Which company makes Twix?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q869733 wdt:P176 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Twix",
+                            "entity": "wd:Q869733"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P176 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Twix",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 47,
+            "natural_language_question": "What is the nearest black hole?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "May not give an accurate result due to different units used.",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q589 . ?subj wdt:P2583 ?obj . } ORDER BY ?obj LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "black hole",
+                            "entity": "wd:Q589"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P2583 ?obj . } ORDER BY ?obj LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "black hole",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 48,
+            "natural_language_question": "Which statues are made of copper?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { ?subj wdt:P31/wdt:P279* wd:Q179700 . ?subj wdt:P186 wd:Q753 }",
+                    "entities": [
+                        {
+                            "label": "statue",
+                            "entity": "wd:Q179700"
+                        },
+                        {
+                            "label": "copper",
+                            "entity": "wd:Q753"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P186 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "statue",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "copper",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 49,
+            "natural_language_question": "Which conferences focus on machine learning?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { ?subj wdt:P31/wdt:P279* wd:Q47258130 . ?subj wdt:P921 wd:Q2539 . }",
+                    "entities": [
+                        {
+                            "label": "conferences",
+                            "entity": "wd:Q47258130"
+                        },
+                        {
+                            "label": "machine learning",
+                            "entity": "wd:Q2539"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P921 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "conferences",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "machine learning",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 50,
+            "natural_language_question": "Which cities are named after an apostle?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q515 . ?subj wdt:P138 ?obj . ?obj wdt:P361 wd:Q4155679 }",
+                    "entities": [
+                        {
+                            "label": "cities",
+                            "entity": "wd:Q515"
+                        },
+                        {
+                            "label": "apostle",
+                            "entity": "wd:Q4155679"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P138 ?obj . ?obj wdt:P361 <obj_3> }",
+                    "slots": [
+                        {
+                            "label": "cities",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "apostle",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 51,
+            "natural_language_question": "What chocolate bars are made by Nestle?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { ?subj wdt:P31*/wdt:P279* wd:Q1361086 . ?subj wdt:P176 wd:Q160746 . }",
+                    "entities": [
+                        {
+                            "label": "chocolate bars",
+                            "entity": "wd:Q1361086"
+                        },
+                        {
+                            "label": "Nestle",
+                            "entity": "wd:Q160746"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P176 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "chocolate bars",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Nestle",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 52,
+            "natural_language_question": "Who was president before Nixon?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { wd:Q9588 p:P39 ?obj . ?obj ps:P39 wd:Q11696 . ?obj ps:P1365 ?obj2 . }",
+                    "entities": [
+                        {
+                            "label": "president",
+                            "entity": "wd:Q11696"
+                        },
+                        {
+                            "label": "Nixon",
+                            "entity": "wd:Q9588"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { <sbj_1> p:P39 ?obj . ?obj ps:P39 <obj_2> . ?obj ps:P1365 ?obj2 . }",
+                    "slots": [
+                        {
+                            "label": "president",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "Nixon",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 53,
+            "natural_language_question": "How many books are in the Hitchhiker's Guide to the Galaxy series?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT (COUNT(DISTINCT ?obj) AS ?count) WHERE { wd:Q25169 wdt:P527 ?obj  }",
+                    "entities": [
+                        {
+                            "label": "Hitchhiker's Guide to the Galaxy",
+                            "entity": "wd:Q25169"
+                        }
+                    ],
+                    "sparql_template": "SELECT (COUNT(DISTINCT ?obj) AS ?count) WHERE { <sbj_1> wdt:P527 ?obj  }",
+                    "slots": [
+                        {
+                            "label": "Hitchhiker's Guide to the Galaxy",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 54,
+            "natural_language_question": "Which Simpsons characters were not born in Springfield?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT * WHERE { ?subj wdt:P31/wdt:P279 wd:Q95074 . ?subj wdt:P1080 wd:Q61468436 . ?subj wdt:P19 ?obj . FILTER(?obj != wd:Q151076)  }",
+                    "entities": [
+                        {
+                            "label": "Simpsons",
+                            "entity": "wd:Q61468436"
+                        },
+                        {
+                            "label": "characters",
+                            "entity": "wd:Q95074"
+                        },
+                        {
+                            "label": "Springfield",
+                            "entity": "wd:Q151076"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?subj wdt:P31/wdt:P279 <obj_1> . ?subj wdt:P1080 <obj_2> . ?subj wdt:P19 ?obj . FILTER(?obj != <obj_4> )  }",
+                    "slots": [
+                        {
+                            "label": "characters",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Simpsons",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "Springfield",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 55,
+            "natural_language_question": "When was sparkling water invented?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q264554 wdt:P575 ?obj  }",
+                    "entities": [
+                        {
+                            "label": "sparkling water",
+                            "entity": "wd:Q264554"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P575 ?obj  }",
+                    "slots": [
+                        {
+                            "label": "sparkling water",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 56,
+            "natural_language_question": "What articles discuss knowledge graph embeddings?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P921 wd:Q33003557 . ?subj wdt:P31/wdt:P279* wd:Q13442814 }",
+                    "entities": [
+                        {
+                            "label": "knowledge graph embeddings",
+                            "entity": "wd:Q33003557"
+                        },
+                        {
+                            "label": "articles",
+                            "entity": "wd:Q13442814"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P921 <obj_1> . ?subj wdt:P31/wdt:P279* <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "knowledge graph embeddings",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "articles",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 57,
+            "natural_language_question": "Who is the tallest basketball player of all time?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "timeout limit reached",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P106 wd:Q3665646 . ?subj wdt:P2048 ?obj . } ORDER BY DESC(?obj) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "basketball player",
+                            "entity": "wd:Q3665646"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P106 <obj_1> . ?subj wdt:P2048 ?obj . } ORDER BY DESC(?obj) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "basketball player",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 58,
+            "natural_language_question": "How old is Justin Bieber?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT (YEAR(NOW())-YEAR(?obj) - IF(MONTH(NOW())>MONTH(?obj),0,IF(MONTH(NOW())=MONTH(?obj) && DAY(NOW())>=DAY(?obj),0,1)) AS ?age) WHERE { wd:Q34086 wdt:P569 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Justin Bieber",
+                            "entity": "wd:Q34086"
+                        }
+                    ],
+                    "sparql_template": "SELECT (YEAR(NOW())-YEAR(?obj) - IF(MONTH(NOW())>MONTH(?obj),<num>,IF(MONTH(NOW())=MONTH(?obj) && DAY(NOW())>=DAY(?obj),<num>,<num>)) AS ?age) WHERE { <sbj_1> wdt:P569 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Justin Bieber",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 59,
+            "natural_language_question": "Whose birthday is today?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Likely to timeout without a low LIMIT",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P569 ?obj . FILTER(MONTH(NOW())=MONTH(?obj) && DAY(NOW())=DAY(?obj)) } LIMIT 100",
+                    "entities": [],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P569 ?obj . FILTER(MONTH(NOW())=MONTH(?obj) && DAY(NOW())=DAY(?obj)) } LIMIT 100",
+                    "slots": []
+                }
+            ]
+        },
+        {
+            "question_id": 60,
+            "natural_language_question": "Is Michael Jackson the oldest child?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "ASK WHERE { wd:Q2831 wdt:P569 ?obj1 . wd:Q2831 wdt:P3373 ?obj2 . ?obj2 wdt:P569 ?obj3 . FILTER(?obj1 > ?obj3) }",
+                    "entities": [
+                        {
+                            "label": "Michael Jackson",
+                            "entity": "wd:Q2831"
+                        }
+                    ],
+                    "sparql_template": "ASK WHERE { <sbj_1> wdt:P569 ?obj1 . <sbj_1> wdt:P3373 ?obj2 . ?obj2 wdt:P569 ?obj3 . FILTER(?obj1 > ?obj3) }",
+                    "slots": [
+                        {
+                            "label": "Michael Jackson",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 61,
+            "natural_language_question": "Which countries have a female head of state?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P35 ?obj1 . ?obj1 wdt:P21 wd:Q6581072 . }",
+                    "entities": [
+                        {
+                            "label": "female",
+                            "entity": "wd:Q6581072"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P35 ?obj1 . ?obj1 wdt:P21 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "female",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 62,
+            "natural_language_question": "Which countries have a monarchy?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "Q3624078 corresponds to sovereign states",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3624078 . ?subj wdt:P122/wdt:P279* wd:Q7269 }",
+                    "entities": [
+                        {
+                            "label": "countries",
+                            "entity": "wd:Q3624078"
+                        },
+                        {
+                            "label": "monarchy",
+                            "entity": "wd:Q7269"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P122/wdt:P279* <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "countries",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "monarchy",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 63,
+            "natural_language_question": "Which universities are based in Peru?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3918 . ?subj wdt:P17 wd:Q419 }",
+                    "entities": [
+                        {
+                            "label": "universities",
+                            "entity": "wd:Q3918"
+                        },
+                        {
+                            "label": "Peru",
+                            "entity": "wd:Q419"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P17 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "universities",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Peru",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 64,
+            "natural_language_question": "Which element precedes tin in the periodic table?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj2 WHERE { wd:Q1096 p:P31 ?obj1 . ?obj1 pq:P155 ?obj2 . }",
+                    "entities": [
+                        {
+                            "label": "tin",
+                            "entity": "wd:Q1096"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj2 WHERE { <sbj_1> p:P31 ?obj1 . ?obj1 pq:P155 ?obj2 . }",
+                    "slots": [
+                        {
+                            "label": "tin",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 65,
+            "natural_language_question": "Which element has the lowest melting point?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q11344 . ?subj wdt:P2101 ?obj } ORDER BY ?obj LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "element",
+                            "entity": "wd:Q11344"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P2101 ?obj } ORDER BY ?obj LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "element",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 66,
+            "natural_language_question": "Which language is the official language of the most countries?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { ?subj wdt:P31/wdt:P279* wd:Q3624078 . ?subj wdt:P37 ?obj } GROUP BY ?obj ORDER BY DESC(COUNT(?subj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "countries",
+                            "entity": "wd:Q3624078"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P37 ?obj } GROUP BY ?obj ORDER BY DESC(COUNT(?subj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "countries",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 67,
+            "natural_language_question": "Which culinary nuts are not botanical nuts?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q3320037 . MINUS { ?subj wdt:P31*/wdt:P279* wd:Q11009 . } }",
+                    "entities": [
+                        {
+                            "label": "culinary nuts",
+                            "entity": "wd:Q3320037"
+                        },
+                        {
+                            "label": "botanical nuts",
+                            "entity": "wd:Q11009"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . MINUS { ?subj wdt:P31*/wdt:P279* <obj_2> . } }",
+                    "slots": [
+                        {
+                            "label": "culinary nuts",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "botanical nuts",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 68,
+            "natural_language_question": "Which colours are named after fruits?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q1075 . ?subj wdt:P138 ?obj . ?obj wdt:P31*/wdt:P279* wd:Q3314483 . }",
+                    "entities": [
+                        {
+                            "label": "colours",
+                            "entity": "wd:Q1075"
+                        },
+                        {
+                            "label": "fruits",
+                            "entity": "wd:Q3314483"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P138 ?obj . ?obj wdt:P31*/wdt:P279* <obj_3> . }",
+                    "slots": [
+                        {
+                            "label": "colours",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "fruits",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 69,
+            "natural_language_question": "Which mayors were not human?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "looking for animal mayors is implicit",
+                    "sparql_query": "SELECT * WHERE { ?subj wdt:P39 wd:Q30185 . ?subj wdt:P31/wdt:P279* wd:Q729 . MINUS { ?subj wdt:P31/wdt:P279* wd:Q5 . } }",
+                    "entities": [
+                        {
+                            "label": "mayors",
+                            "entity": "wd:Q30185"
+                        },
+                        {
+                            "label": "human",
+                            "entity": "wd:Q5"
+                        }
+                    ],
+                    "sparql_template": "SELECT * WHERE { ?subj wdt:P39 <obj_1> . ?subj wdt:P31/wdt:P279* <obj_2> . MINUS { ?subj wdt:P31/wdt:P279* <obj_3> . } }",
+                    "slots": [
+                        {
+                            "label": "mayors",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "human",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 70,
+            "natural_language_question": "Which polygonal numbers are also pronic?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q836270 . ?subj wdt:P31/wdt:P279* wd:Q1486643 . }",
+                    "entities": [
+                        {
+                            "label": "polygonal numbers",
+                            "entity": "wd:Q836270"
+                        },
+                        {
+                            "label": "pronic",
+                            "entity": "wd:Q1486643"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P31/wdt:P279* <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "polygonal numbers",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "pronic",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 71,
+            "natural_language_question": "What's the next prime after 51?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj2 WHERE { wd:Q712808 p:P31 ?obj1 . ?obj1 pq:P156 ?obj2 . ?obj1 ps:P31 wd:Q49008 }",
+                    "entities": [
+                        {
+                            "label": "prime",
+                            "entity": "wd:Q49008"
+                        },
+                        {
+                            "label": "51",
+                            "entity": "wd:Q712808"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj2 WHERE { <sbj_1> p:P31 ?obj1 . ?obj1 pq:P156 ?obj2 . ?obj1 ps:P31 <obj_3> }",
+                    "slots": [
+                        {
+                            "label": "prime",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "51",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 72,
+            "natural_language_question": "What animal can hear the highest frequency?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P3465 ?obj } ORDER BY DESC(?obj) LIMIT 1",
+                    "entities": [],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P3465 ?obj } ORDER BY DESC(?obj) LIMIT 1",
+                    "slots": []
+                }
+            ]
+        },
+        {
+            "question_id": 73,
+            "natural_language_question": "Which countries use the same plug as Canada?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { wd:Q16 wdt:P2853 ?obj . ?subj wdt:P2853 ?obj . ?subj wdt:P31/wdt:P279* wd:Q3624078 . }",
+                    "entities": [
+                        {
+                            "label": "countries",
+                            "entity": "wd:Q3624078"
+                        },
+                        {
+                            "label": "Canada",
+                            "entity": "wd:Q16"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { <sbj_1> wdt:P2853 ?obj . ?subj wdt:P2853 ?obj . ?subj wdt:P31/wdt:P279* <obj_3> . }",
+                    "slots": [
+                        {
+                            "label": "countries",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "Canada",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 74,
+            "natural_language_question": "Who has won more than one type of Nobel Prize?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P166 ?obj . ?obj wdt:P31*/wdt:P279* wd:Q7191 } GROUP BY ?subj HAVING(COUNT(DISTINCT(?obj))>1)",
+                    "entities": [
+                        {
+                            "label": "Nobel Prize",
+                            "entity": "wd:Q7191"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P166 ?obj . ?obj wdt:P31*/wdt:P279* <obj_2> } GROUP BY ?subj HAVING(COUNT(DISTINCT(?obj))><num>)",
+                    "slots": [
+                        {
+                            "label": "Nobel Prize",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 75,
+            "natural_language_question": "Which city has the most catedrals?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { ?subj wdt:P31*/wdt:P279 wd:Q2977 . ?subj wdt:P131* ?obj . ?obj wdt:P31*/wdt:P279 wd:Q515 . } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "city",
+                            "entity": "wd:Q515"
+                        },
+                        {
+                            "label": "catedrals",
+                            "entity": "wd:Q2977"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?subj wdt:P31*/wdt:P279 <obj_1> . ?subj wdt:P131* ?obj . ?obj wdt:P31*/wdt:P279 <obj_3> . } GROUP BY ?obj ORDER BY DESC(COUNT(DISTINCT ?subj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "city",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "catedrals",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 76,
+            "natural_language_question": "What make of car is a Corolla?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q243543 wdt:P176 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Corolla",
+                            "entity": "wd:Q243543"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P176 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Corolla",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 77,
+            "natural_language_question": "What is the tallest mountain in the Andes?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "timeout limit reached",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q8502 . ?subj wdt:P4552* wd:Q5456 . ?subj wdt:P2044 ?obj } ORDER BY DESC(?obj) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "Mountain",
+                            "entity": "wd:Q8502"
+                        },
+                        {
+                            "label": "Andes",
+                            "entity": "wd:Q5456"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P4552* <obj_2> . ?subj wdt:P2044 ?obj } ORDER BY DESC(?obj) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "Mountain",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Andes",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 78,
+            "natural_language_question": "Which American president had the most wives?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj p:P26 ?obj . ?subj wdt:P39 wd:Q11696 . } GROUP BY ?subj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "American president",
+                            "entity": "wd:Q11696"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj p:P26 ?obj . ?subj wdt:P39 <obj_2> . } GROUP BY ?subj ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "American president",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 79,
+            "natural_language_question": "Which countries drive on the left?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P1622 wd:Q13196750 }",
+                    "entities": [
+                        {
+                            "label": "left",
+                            "entity": "wd:Q13196750"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P1622 <obj_1> }",
+                    "slots": [
+                        {
+                            "label": "left",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 80,
+            "natural_language_question": "When was the Rubix cube invented?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q47043 wdt:P571 ?obj }",
+                    "entities": [
+                        {
+                            "label": "Rubix cube",
+                            "entity": "wd:Q47043"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P571 ?obj }",
+                    "slots": [
+                        {
+                            "label": "Rubix cube",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 81,
+            "natural_language_question": "Which conferences were organized by Turing award winners?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q2020153 . ?subj wdt:P664 ?obj . ?obj wdt:P166 wd:Q185667 }",
+                    "entities": [
+                        {
+                            "label": "Turing award",
+                            "entity": "wd:Q185667"
+                        },
+                        {
+                            "label": "conferences",
+                            "entity": "wd:Q2020153"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P664 ?obj . ?obj wdt:P166 <obj_3> }",
+                    "slots": [
+                        {
+                            "label": "Turing award",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "conferences",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 82,
+            "natural_language_question": "What video games are made by the developer of League of Legends?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q7889 . ?subj wdt:P178 ?obj . wd:Q223341 wdt:P178 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "video games",
+                            "entity": "wd:Q7889"
+                        },
+                        {
+                            "label": "League of Legends",
+                            "entity": "wd:Q223341"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P178 ?obj . <sbj_3> wdt:P178 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "video games",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "League of Legends",
+                            "slot": "<sbj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 83,
+            "natural_language_question": "Which writers speak French, Arabic and Japanese?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P106 wd:Q36180 . ?subj wdt:P1412 wd:Q150 . ?subj wdt:P1412 wd:Q13955 . ?subj wdt:P1412 wd:Q5287 . }",
+                    "entities": [
+                        {
+                            "label": "writers",
+                            "entity": "wd:Q36180"
+                        },
+                        {
+                            "label": "French",
+                            "entity": "wd:Q150"
+                        },
+                        {
+                            "label": "Arabic",
+                            "entity": "wd:Q13955"
+                        },
+                        {
+                            "label": "Japanese",
+                            "entity": "wd:Q5287"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P106 <obj_1> . ?subj wdt:P1412 <obj_2> . ?subj wdt:P1412 <obj_3> . ?subj wdt:P1412 <obj_4> . }",
+                    "slots": [
+                        {
+                            "label": "writers",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "French",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "Arabic",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "Japanese",
+                            "slot": "<obj_4>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 84,
+            "natural_language_question": "Which pandemic lasted the longest?",
+            "comment": "The query does not consider any current pandemic (or pandemics with no end date)",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q12184 . ?subj wdt:P580 ?obj1 . ?subj wdt:P582 ?obj2 } ORDER BY DESC(?obj2 - ?obj1) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "pandemic",
+                            "entity": "wd:Q12184"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P580 ?obj1 . ?subj wdt:P582 ?obj2 } ORDER BY DESC(?obj2 - ?obj1) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "pandemic",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 85,
+            "natural_language_question": "Give me all whiskey distilleries in Ireland.",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P271* wd:Q10373548 . ?subj wdt:P17 wd:Q27 }",
+                    "entities": [
+                        {
+                            "label": "whiskey distilleries",
+                            "entity": "wd:Q10373548"
+                        },
+                        {
+                            "label": "Ireland",
+                            "entity": "wd:Q27"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P271* <obj_1> . ?subj wdt:P17 <obj_2> }",
+                    "slots": [
+                        {
+                            "label": "whiskey distilleries",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Ireland",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 86,
+            "natural_language_question": "Find animals with Twitter accounts.",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q729 . ?subj wdt:P2002 ?obj . MINUS { ?subj wdt:P31 wd:Q5 }  }",
+                    "entities": [
+                        {
+                            "label": "animals",
+                            "entity": "wd:Q729"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P2002 ?obj . MINUS { ?subj wdt:P31 <obj_3> }  }",
+                    "slots": [
+                        {
+                            "label": "animals",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 87,
+            "natural_language_question": "How many regions of France are there?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT (COUNT(?subj) AS ?count) WHERE { ?subj wdt:P31 wd:Q36784 . }",
+                    "entities": [
+                        {
+                            "label": "regions of France",
+                            "entity": "wd:Q36784"
+                        }
+                    ],
+                    "sparql_template": "SELECT (COUNT(?subj) AS ?count) WHERE { ?subj wdt:P31 <obj_1> . }",
+                    "slots": [
+                        {
+                            "label": "regions of France",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 88,
+            "natural_language_question": "Which living people have an element named after them?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { ?subj wdt:P31*/wdt:P276* wd:Q11344 . ?subj wdt:P138 ?obj . ?obj wdt:P31 wd:Q5 . MINUS { ?obj wdt:P570 ?obj2 } }",
+                    "entities": [
+                        {
+                            "label": "people",
+                            "entity": "wd:Q5"
+                        },
+                        {
+                            "label": "chemical element",
+                            "entity": "wd:Q11344"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { ?subj wdt:P31*/wdt:P276* <obj_1> . ?subj wdt:P138 ?obj . ?obj wdt:P31 <obj_3> . MINUS { ?obj wdt:P570 ?obj2 } }",
+                    "slots": [
+                        {
+                            "label": "people",
+                            "slot": "<obj_3>"
+                        },
+                        {
+                            "label": "chemical element",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 89,
+            "natural_language_question": "Which Chilean companies have U.S. parent companies?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q4830453 . ?subj wdt:P17 wd:Q298 . ?subj wdt:P749 ?obj . ?obj wdt:P17 wd:Q30 . }",
+                    "entities": [
+                        {
+                            "label": "companies",
+                            "entity": "wd:Q4830453"
+                        },
+                        {
+                            "label": "Chilean",
+                            "entity": "wd:Q298"
+                        },
+                        {
+                            "label": "U.S.",
+                            "entity": "wd:Q30"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P17 <obj_2> . ?subj wdt:P749 ?obj . ?obj wdt:P17 <obj_4> . }",
+                    "slots": [
+                        {
+                            "label": "companies",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Chilean",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "U.S.",
+                            "slot": "<obj_4>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 90,
+            "natural_language_question": "Did Tarantino direct a movie last year?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "ASK WHERE { ?subj wdt:P57 wd:Q3772 . ?subj wdt:P577 ?obj . FILTER(YEAR(?obj)=(YEAR(NOW())-1)) }",
+                    "entities": [
+                        {
+                            "label": "Tarantino",
+                            "entity": "wd:Q3772"
+                        }
+                    ],
+                    "sparql_template": "ASK WHERE { ?subj wdt:P57 <obj_1> . ?subj wdt:P577 ?obj . FILTER(YEAR(?obj)=(YEAR(NOW())<num>)) }",
+                    "slots": [
+                        {
+                            "label": "Tarantino",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 91,
+            "natural_language_question": "Which smartphones are made in China?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?sbj WHERE {  ?sbj wdt:P31*/wdt:P279* wd:Q22645.  ?sbj wdt:P176 ?obj .  ?obj wdt:P17/wdt:P361* wd:Q29520 }",
+                    "entities": [
+                        {
+                            "label": "smartphones",
+                            "entity": "wd:Q22645"
+                        },
+                        {
+                            "label": "China",
+                            "entity": "wd:Q29520"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?sbj WHERE {  ?sbj wdt:P31*/wdt:P279* <obj_1>.  ?sbj wdt:P176 ?obj .  ?obj wdt:P17/wdt:P361* <obj_3> }",
+                    "slots": [
+                        {
+                            "label": "smartphones",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "China",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 92,
+            "natural_language_question": "Which animals have a Unicode character?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "comment": "timeout limit reached",
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q55983715 . ?subj wdt:P487 ?obj . }",
+                    "entities": [
+                        {
+                            "label": "animals",
+                            "entity": "wd:Q55983715"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P487 ?obj . }",
+                    "slots": [
+                        {
+                            "label": "animals",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 93,
+            "natural_language_question": "Which movie of the past decade has won the most Academy Awards?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* wd:Q11424 . ?subj wdt:P166 ?obj . ?obj wdt:P31/wdt:P279* wd:Q19020 . ?subj wdt:P577 ?obj2 . FILTER(YEAR(NOW())-YEAR(?obj2)-IF(MONTH(NOW())>MONTH(?obj2),0,IF(MONTH(NOW())=MONTH(?obj2) && DAY(NOW())>=DAY(?obj),0,1))< 10) } GROUP BY (?subj) ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "movie",
+                            "entity": "wd:Q11424"
+                        },
+                        {
+                            "label": "Academy Awards",
+                            "entity": "wd:Q19020"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31/wdt:P279* <obj_1> . ?subj wdt:P166 ?obj . ?obj wdt:P31/wdt:P279* <obj_3> . ?subj wdt:P577 ?obj2 . FILTER(YEAR(NOW())-YEAR(?obj2)-IF(MONTH(NOW())>MONTH(?obj2),<num>,IF(MONTH(NOW())=MONTH(?obj2) && DAY(NOW())>=DAY(?obj),<num>,<num>))< <num>) } GROUP BY (?subj) ORDER BY DESC(COUNT(DISTINCT ?obj)) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "movie",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Academy Awards",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 94,
+            "natural_language_question": "Which diesel cars are made by Honda?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q1420 . ?subj wdt:P516 wd:Q174174 . ?subj wdt:P176 wd:Q9584 . }",
+                    "entities": [
+                        {
+                            "label": "diesel",
+                            "entity": "wd:Q174174"
+                        },
+                        {
+                            "label": "cars",
+                            "entity": "wd:Q1420"
+                        },
+                        {
+                            "label": "Honda",
+                            "entity": "wd:Q9584"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P516 <obj_2> . ?subj wdt:P176 <obj_3> . }",
+                    "slots": [
+                        {
+                            "label": "diesel",
+                            "slot": "<obj_2>"
+                        },
+                        {
+                            "label": "cars",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Honda",
+                            "slot": "<obj_3>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 95,
+            "natural_language_question": "Who was the winner of the latest Fields Medal?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj p:P166 ?obj . ?obj ps:P166 wd:Q28835 . ?obj pq:P585 ?year . } ORDER BY DESC(?year) LIMIT 1",
+                    "entities": [
+                        {
+                            "label": "Fields Medal",
+                            "entity": "wd:Q28835"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj p:P166 ?obj . ?obj ps:P166 <obj_2> . ?obj pq:P585 ?year . } ORDER BY DESC(?year) LIMIT 1",
+                    "slots": [
+                        {
+                            "label": "Fields Medal",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 96,
+            "natural_language_question": "Who wrote The Old Man and the Sea?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?obj WHERE { wd:Q26505 wdt:P50 ?obj  }",
+                    "entities": [
+                        {
+                            "label": "The Old Man and the Sea",
+                            "entity": "wd:Q26505"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?obj WHERE { <sbj_1> wdt:P50 ?obj  }",
+                    "slots": [
+                        {
+                            "label": "The Old Man and the Sea",
+                            "slot": "<sbj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 97,
+            "natural_language_question": "Which YouTube channels talk about maths?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q17558136 . ?subj wdt:P921 wd:Q395 . }",
+                    "entities": [
+                        {
+                            "label": "YouTube channels",
+                            "entity": "wd:Q17558136"
+                        },
+                        {
+                            "label": "maths",
+                            "entity": "wd:Q395"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P921 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "YouTube channels",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "maths",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 98,
+            "natural_language_question": "List Italian sauces.",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q178359 . ?subj wdt:P495 wd:Q38 . }",
+                    "entities": [
+                        {
+                            "label": "sauce",
+                            "entity": "wd:Q178359"
+                        },
+                        {
+                            "label": "Italy",
+                            "entity": "wd:Q38"
+                        }
+                    ],
+                    "sparql_template": "SELECT DISTINCT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P495 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "sauce",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Italy",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 99,
+            "natural_language_question": "What diseases are associated with the gene FGF14?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P2293 wd:Q17928040 }",
+                    "entities": [
+                        {
+                            "label": "FGF14",
+                            "entity": "wd:Q17928040"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P2293 <obj_1> }",
+                    "slots": [
+                        {
+                            "label": "FGF14",
+                            "slot": "<obj_1>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "question_id": 100,
+            "natural_language_question": "What ultra-cool dwarfs have been found in the constellation Aquarius?",
+            "query_answer": [
+                {
+                    "query_id": 0,
+                    "sparql_query": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* wd:Q24039974 . ?subj wdt:P59 wd:Q10576 . }",
+                    "entities": [
+                        {
+                            "label": "ultra-cool dwarfs",
+                            "entity": "wd:Q24039974"
+                        },
+                        {
+                            "label": "Aquarius",
+                            "entity": "wd:Q10576"
+                        }
+                    ],
+                    "sparql_template": "SELECT ?subj WHERE { ?subj wdt:P31*/wdt:P279* <obj_1> . ?subj wdt:P59 <obj_2> . }",
+                    "slots": [
+                        {
+                            "label": "ultra-cool dwarfs",
+                            "slot": "<obj_1>"
+                        },
+                        {
+                            "label": "Aquarius",
+                            "slot": "<obj_2>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
