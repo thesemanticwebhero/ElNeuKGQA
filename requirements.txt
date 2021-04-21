@@ -1,0 +1,7 @@
+sparqlwrapper
+requests
+nltk
+fairseq
+flair
+pycurl==7.43.0.5
+certifi
